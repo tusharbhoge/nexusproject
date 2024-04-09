@@ -95,7 +95,7 @@ window.addEventListener('scroll', function() {
     parallaxContainer.style.backgroundPositionY = `${scrollTop * 0.3}px`; // Adjust the scroll speed as needed
 });
 //  google sheet
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzvB7gmm-rinqsg9goiSf3PQbXCFMYot-MDiseTknIqX1BgZqQJDmlggjUQgyypH7jk7w/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbylKq50-J469OwxIxROiuA9KXGrp8Qt14FWtbhgtvNIm8Dy_8lOsI8JtXFqpMZCXo41/exec';
 
 const form = document.forms['submit-to-google-sheet1'];
 const msg = document.getElementById("msg");
