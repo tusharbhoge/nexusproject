@@ -94,4 +94,27 @@ window.addEventListener('scroll', function() {
     const parallaxContainer = document.querySelector('.parallax-container');
     parallaxContainer.style.backgroundPositionY = `${scrollTop * 0.3}px`; // Adjust the scroll speed as needed
 });
+//  google sheet
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzvB7gmm-rinqsg9goiSf3PQbXCFMYot-MDiseTknIqX1BgZqQJDmlggjUQgyypH7jk7w/exec';
+
+const form = document.forms['submit-to-google-sheet1'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    msg.innerHTML = "Sending...";
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully..!!";
+            setTimeout(function(){
+                msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+        })
+        .catch(error => {
+            msg.innerHTML = "Error! Please try again.";
+            console.error('Error!', error.message);
+        });
+});
 
